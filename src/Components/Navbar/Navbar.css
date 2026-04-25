@@ -1,0 +1,327 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  background: #1B4D2E;
+  padding: 1rem 5%;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Top Row Styles */
+.nav-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.logo-section {
+  text-align: left;
+}
+
+.logo {
+  color: #E8A317;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  direction: rtl;
+}
+
+.tagline {
+  color: #C5D6C0;
+  font-size: 14px;
+  margin: 5px 0 0;
+  font-family: 'Arial', sans-serif;
+  direction: ltr;
+}
+
+.contact-info {
+  display: flex;
+  align-items: center;
+}
+
+.whatsapp-contact {
+  background: #25D366;
+  padding: 8px 16px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-weight: bold;
+}
+
+.whatsapp-icon {
+  font-size: 18px;
+}
+
+.whatsapp-number {
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  color: white;
+}
+
+.whatsapp-text {
+  font-size: 12px;
+  background: rgba(255,255,255,0.2);
+  padding: 2px 6px;
+  border-radius: 15px;
+}
+
+/* Bottom Row Styles */
+.nav-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Arial', sans-serif;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  color: #E8A317;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  min-width: 200px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  padding: 0.5rem 0;
+  list-style: none;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  color: #1B4D2E;
+  padding: 10px 20px;
+  display: block;
+  font-size: 14px;
+  transition: all 0.3s;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a:hover {
+  background: #F5F0E8;
+  color: #E8A317;
+  padding-left: 25px;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 25px;
+  padding: 0;
+  width: 280px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 8px 15px;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 12px;
+  border-radius: 25px 0 0 25px;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+  font-size: 11px;
+}
+
+.search-btn {
+  background: #E8A317;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 0 25px 25px 0;
+  cursor: pointer;
+  font-size: 12px;
+  color: white;
+}
+
+.user-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.track-order, .my-account, .e-library {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+  font-family: 'Arial', sans-serif;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.track-order:hover, .my-account:hover, .e-library:hover {
+  color: #E8A317;
+}
+
+.cart-icon a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  .nav-links a {
+    font-size: 12px;
+  }
+  
+  .user-actions {
+    gap: 0.8rem;
+  }
+  
+  .track-order, .my-account, .e-library {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .nav-bottom {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .nav-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .nav-right {
+    justify-content: center;
+  }
+  
+  .search-bar {
+    width: 100%;
+  }
+  
+  /* Mobile dropdown - click instead of hover */
+  .dropdown-menu {
+    position: static;
+    box-shadow: none;
+    background: rgba(255,255,255,0.1);
+    margin-top: 0.5rem;
+    display: none;
+  }
+  
+  .dropdown.active .dropdown-menu {
+    display: block;
+  }
+  
+  .dropdown-menu li a {
+    color: white;
+    padding: 8px 20px;
+  }
+  
+  .dropdown-menu li a:hover {
+    background: rgba(255,255,255,0.1);
+    color: #E8A317;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-top {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .logo-section {
+    text-align: center;
+  }
+  
+  .logo {
+    font-size: 16px;
+  }
+  
+  .tagline {
+    font-size: 12px;
+  }
+  
+  .nav-links {
+    gap: 0.8rem;
+  }
+  
+  .user-actions {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

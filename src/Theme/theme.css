@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Georgia&family=Arial:wght@400;500;600;700&display=swap');
+
+/* Theme Colors */
+:root {
+  --primary-green: #0B3B2A;
+  --secondary-green: #1B5E3F;
+  --gold: #FFD700;
+  --cream: #F9F6F0;
+  --dark-cream: #FEF9E6;
+  --text-dark: #0B3B2A;
+  --text-light: #666;
+  --border-color: #E8DCC8;
+}
+
+/* Global Button Styles */
+button {
+  font-family: 'Arial', sans-serif;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Georgia', serif;
+}
+
+p, a, li, span, div {
+  font-family: 'Arial', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', 'Amiri', 'Roboto', sans-serif;
+  background-color: #ffffff;
+  color: #1e2a1e;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #b68b40;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #8b5a2b;
+}

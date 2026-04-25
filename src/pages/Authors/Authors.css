@@ -1,0 +1,218 @@
+.authors-page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #FDF8F0;
+  min-height: 100vh;
+}
+
+.authors-header {
+  text-align: center;
+  padding: 2rem 1rem 3rem;
+  background: linear-gradient(135deg, #FDF8F0 0%, #F9F5EB 100%);
+  border-radius: 0 0 30px 30px;
+  margin-bottom: 2rem;
+}
+
+.authors-header h1 {
+  font-size: 2.5rem;
+  color: #2C3E2D;
+  font-family: 'Georgia', serif;
+  margin-bottom: 0.5rem;
+}
+
+.authors-header p {
+  font-size: 1.1rem;
+  color: #666;
+  font-family: 'Arial', sans-serif;
+}
+
+.authors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.author-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid #E8E0D0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  cursor: pointer;
+}
+
+.author-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  border-color: #E8A317;
+}
+
+.author-info h3 {
+  font-size: 1.4rem;
+  color: #1B4D2E;
+  font-family: 'Georgia', serif;
+  margin-bottom: 0.5rem;
+}
+
+.author-books-count {
+  font-size: 0.9rem;
+  color: #E8A317;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.author-description {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  font-family: 'Arial', sans-serif;
+}
+
+.view-books-btn {
+  background: transparent;
+  color: #1B4D2E;
+  border: 2px solid #E8A317;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Arial', sans-serif;
+}
+
+.view-books-btn:hover {
+  background: #E8A317;
+  color: white;
+  transform: translateX(5px);
+}
+
+/* Load more button */
+.load-more {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.load-more-btn {
+  background: #1B4D2E;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.load-more-btn:hover {
+  background: #2D6A3B;
+}
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  background: white;
+  color: #1B4D2E;
+  border: 1px solid #E8E0D0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Arial', sans-serif;
+}
+
+.page-btn:hover {
+  background: #E8A317;
+  color: white;
+  border-color: #E8A317;
+}
+
+.page-btn.active {
+  background: #1B4D2E;
+  color: white;
+  border-color: #1B4D2E;
+}
+
+@media (max-width: 768px) {
+  .authors-page {
+    padding: 1rem;
+  }
+  
+  .authors-header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .authors-header p {
+    font-size: 1rem;
+  }
+  
+  .authors-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .author-card {
+    padding: 1rem;
+  }
+  
+  .author-info h3 {
+    font-size: 1.2rem;
+  }
+
+  .authors-count {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #E8A317;
+  font-weight: 600;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+.page-btn {
+  background: white;
+  color: #1B4D2E;
+  border: 1px solid #E8E0D0;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Arial', sans-serif;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: #E8A317;
+  color: white;
+  border-color: #E8A317;
+}
+
+.page-btn.active {
+  background: #1B4D2E;
+  color: white;
+  border-color: #1B4D2E;
+}
+
+.page-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+}

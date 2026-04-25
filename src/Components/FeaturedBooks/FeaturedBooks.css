@@ -1,0 +1,128 @@
+.featured-books {
+  padding: 50px 5%;
+  background: #FFFFFF;
+}
+
+.featured-books .section-header h2 {
+  font-size: 30px;
+  color: #2C3E2D;
+  font-family: 'Georgia', serif;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.book-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #E8E0D0;
+  transition: all 0.3s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.book-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.book-badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: #E8A317;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #1B4D2E;
+  font-family: 'Arial', sans-serif;
+}
+
+.book-title {
+  font-size: 17px;
+  color: #2C3E2D;
+  margin: 8px 0 12px;
+  padding-right: 45px;
+  line-height: 1.4;
+  font-family: 'Georgia', serif;
+  min-height: 70px;
+}
+
+.book-price {
+  margin: 12px 0 8px;
+}
+
+.discounted-price {
+  font-size: 22px;
+  font-weight: bold;
+  color: #D4A017;
+  font-family: 'Georgia', serif;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #AAA;
+  margin-left: 8px;
+  font-size: 13px;
+}
+
+.book-paperback {
+  color: #777;
+  font-size: 13px;
+  margin: 8px 0;
+  font-family: 'Arial', sans-serif;
+}
+
+.book-formats {
+  display: flex;
+  gap: 8px;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.format-badge {
+  background: #F5F0E8;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 11px;
+  color: #2C3E2D;
+  font-family: 'Arial', sans-serif;
+}
+
+.add-to-cart {
+  width: 100%;
+  background: #1B4D2E;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+  transition: background 0.3s;
+  margin-top: 12px;
+}
+
+.add-to-cart:hover {
+  background: #2D6A3B;
+}
+
+@media (max-width: 768px) {
+  .books-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .featured-books .section-header h2 {
+    font-size: 24px;
+  }
+}

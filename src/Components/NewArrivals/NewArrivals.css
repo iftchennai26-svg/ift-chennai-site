@@ -1,0 +1,84 @@
+.new-arrivals-section {
+  padding: 60px 5%;
+  background: #FDF8F0;
+}
+
+.new-arrivals-section .section-header h2 {
+  font-size: 28px;
+  color: #2C3E2D;
+  font-family: 'Georgia', serif;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.new-arrivals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.new-arrival-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #E8E0D0;
+  transition: all 0.3s;
+}
+
+.new-arrival-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.new-arrival-content {
+  padding: 25px;
+}
+
+.new-arrival-title {
+  font-size: 18px;
+  color: #2C3E2D;
+  font-family: 'Georgia', serif;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.new-arrival-author {
+  font-size: 14px;
+  color: #E8A317;
+  margin: 0 0 15px 0;
+  font-weight: 500;
+}
+
+.new-arrival-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1B4D2E;
+  margin-bottom: 20px;
+}
+
+.add-to-cart-new {
+  width: 100%;
+  background: #1B4D2E;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s;
+}
+
+.add-to-cart-new:hover {
+  background: #2D6A3B;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .new-arrivals-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,203 @@
+.latest-books-section {
+  padding: 60px 5%;
+  background: #FDF8F0;
+}
+
+.latest-books-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.latest-books-header h2 {
+  font-size: 32px;
+  color: #2C3E2D;
+  font-family: 'Georgia', serif;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.latest-books-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: #E8A317;
+}
+
+.latest-books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.latest-book-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #E8E0D0;
+  position: relative;
+}
+
+.latest-book-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+/* E-PUB Badge */
+.epub-badge {
+  background: #E8A317;
+  padding: 8px 15px;
+  display: inline-block;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  border-radius: 25px;
+  z-index: 1;
+}
+
+.epub-text {
+  color: #1B4D2E;
+  font-weight: bold;
+  font-size: 12px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Book Content */
+.book-content {
+  padding: 25px;
+}
+
+.book-title {
+  font-size: 18px;
+  color: #2C3E2D;
+  font-family: 'Georgia', serif;
+  margin: 0 0 15px 0;
+  line-height: 1.4;
+  min-height: 70px;
+  font-weight: 600;
+  padding-right: 70px;
+}
+
+.book-prices {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.discounted-price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #1B4D2E;
+  font-family: 'Georgia', serif;
+}
+
+.original-price {
+  font-size: 16px;
+  color: #999;
+  text-decoration: line-through;
+  font-family: 'Arial', sans-serif;
+}
+
+.book-footer {
+  border-top: 1px solid #E8E0D0;
+  padding-top: 15px;
+}
+
+.book-meta {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.website-link {
+  font-size: 11px;
+  color: #E8A317;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+}
+
+.whatsapp-number {
+  font-size: 11px;
+  color: #25D366;
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+}
+
+.add-to-cart-btn {
+  width: 100%;
+  background: #1B4D2E;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Arial', sans-serif;
+  transition: all 0.3s;
+}
+
+.add-to-cart-btn:hover {
+  background: #2D6A3B;
+  transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .latest-books-section {
+    padding: 40px 5%;
+  }
+  
+  .latest-books-header h2 {
+    font-size: 24px;
+  }
+  
+  .latest-books-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .book-title {
+    font-size: 16px;
+    min-height: auto;
+    padding-right: 0;
+    margin-top: 10px;
+  }
+  
+  .discounted-price {
+    font-size: 20px;
+  }
+  
+  .original-price {
+    font-size: 14px;
+  }
+  
+  .epub-badge {
+    position: relative;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  
+  .book-content {
+    padding: 20px;
+  }
+  
+  .book-meta {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
