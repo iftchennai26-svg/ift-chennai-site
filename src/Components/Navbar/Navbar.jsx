@@ -63,7 +63,7 @@ const Navbar = () => {
                 </ul>
               )}
             </li>
-            
+            <li><Link to="/authors">Authors</Link></li>
             <li><Link to="/news">News</Link></li>
             <li><Link to="/e-quran">E-Qurán</Link></li>
           </ul>
