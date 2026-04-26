@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useLocation } from 'react-router-dom';
-import FeaturedBooks from "../../Components/FeaturedBooks/FeaturedBooks"
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import FeaturedBooks from "../../Components/FeaturedBooks/FeaturedBooks";
 import './Books.css';
 
 // Book data from screenshot (repeated to make 552 books)
@@ -114,6 +114,7 @@ const generateAllBooks = () => {
 const Books = () => {
   const { category } = useParams();
   const location = useLocation();
+  const navigate = useNavigate();
   const [allBooks] = useState(generateAllBooks());
   const [filteredBooks, setFilteredBooks] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("all");
@@ -121,6 +122,18 @@ const Books = () => {
   const [priceRange, setPriceRange] = useState({ min: 50, max: 5000 });
   const [showFilters, setShowFilters] = useState(false);
   const [showAllBooks, setShowAllBooks] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  
+  // Get search query from URL
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const search = params.get('search');
+    if (search) {
+      setSearchQuery(search);
+    } else {
+      setSearchQuery('');
+    }
+  }, [location.search]);
   
   // Set category from URL parameter
   useEffect(() => {
@@ -142,6 +155,9 @@ const Books = () => {
   
   // Get category display name
   const getCategoryDisplayName = () => {
+    if (searchQuery) {
+      return `Search Results for "${searchQuery}"`;
+    }
     switch(selectedCategory) {
       case 'tamil': return 'Tamil Books';
       case 'arabic': return 'Arabic Books';
@@ -151,12 +167,26 @@ const Books = () => {
     }
   };
   
+  // Clear search
+  const clearSearch = () => {
+    setSearchQuery('');
+    navigate('/books');
+  };
+  
   useEffect(() => {
     let filtered = [...allBooks];
     
     // Filter by category
     if (selectedCategory !== "all") {
       filtered = filtered.filter(book => book.category === selectedCategory);
+    }
+    
+    // Filter by search query
+    if (searchQuery) {
+      filtered = filtered.filter(book => 
+        book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        (book.author && book.author.toLowerCase().includes(searchQuery.toLowerCase()))
+      );
     }
     
     // Filter by price range
@@ -177,7 +207,7 @@ const Books = () => {
     
     setFilteredBooks(filtered);
     setShowAllBooks(false); // Reset load more when filters change
-  }, [selectedCategory, sortBy, priceRange, allBooks]);
+  }, [selectedCategory, sortBy, priceRange, allBooks, searchQuery]);
   
   const addToCart = (book) => {
     alert(`✓ ${book.title} added to cart!\nPrice: ₹${book.price}`);
@@ -196,57 +226,69 @@ const Books = () => {
       <div className="books-collection-section">
         <div className="collection-header">
           <h1>{getCategoryDisplayName()}</h1>
-          <p>Discover {categoryCounts[selectedCategory]}+ authentic Islamic books</p>
+          <p>
+            {searchQuery 
+              ? `Found ${filteredBooks.length} books matching "${searchQuery}"`
+              : `Discover ${categoryCounts[selectedCategory]}+ authentic Islamic books`
+            }
+          </p>
+          {searchQuery && (
+            <button className="clear-search-btn" onClick={clearSearch}>
+              Clear Search
+            </button>
+          )}
         </div>
         
-        {/* Category Tabs */}
-        <div className="category-tabs">
-          <button 
-            className={`category-tab ${selectedCategory === "all" ? "active" : ""}`}
-            onClick={() => {
-              setSelectedCategory("all");
-              window.history.pushState({}, '', '/books');
-            }}
-          >
-            All Books ({categoryCounts.all})
-          </button>
-          <button 
-            className={`category-tab ${selectedCategory === "tamil" ? "active" : ""}`}
-            onClick={() => {
-              setSelectedCategory("tamil");
-              window.history.pushState({}, '', '/books/tamil');
-            }}
-          >
-            📚 Tamil Books ({categoryCounts.tamil})
-          </button>
-          <button 
-            className={`category-tab ${selectedCategory === "english" ? "active" : ""}`}
-            onClick={() => {
-              setSelectedCategory("english");
-              window.history.pushState({}, '', '/books/english');
-            }}
-          >
-            📘 English Books ({categoryCounts.english})
-          </button>
-          <button 
-            className={`category-tab ${selectedCategory === "arabic" ? "active" : ""}`}
-            onClick={() => {
-              setSelectedCategory("arabic");
-              window.history.pushState({}, '', '/books/arabic');
-            }}
-          >
-            📖 Arabic Books ({categoryCounts.arabic})
-          </button>
-          <button 
-            className={`category-tab ${selectedCategory === "urdu" ? "active" : ""}`}
-            onClick={() => {
-              setSelectedCategory("urdu");
-              window.history.pushState({}, '', '/books/urdu');
-            }}
-          >
-            📙 Urdu Books ({categoryCounts.urdu})
-          </button>
-        </div>
+        {/* Category Tabs - Hide when searching */}
+        {!searchQuery && (
+          <div className="category-tabs">
+            <button 
+              className={`category-tab ${selectedCategory === "all" ? "active" : ""}`}
+              onClick={() => {
+                setSelectedCategory("all");
+                window.history.pushState({}, '', '/books');
+              }}
+            >
+              All Books ({categoryCounts.all})
+            </button>
+            <button 
+              className={`category-tab ${selectedCategory === "tamil" ? "active" : ""}`}
+              onClick={() => {
+                setSelectedCategory("tamil");
+                window.history.pushState({}, '', '/books/tamil');
+              }}
+            >
+              📚 Tamil Books ({categoryCounts.tamil})
+            </button>
+            <button 
+              className={`category-tab ${selectedCategory === "english" ? "active" : ""}`}
+              onClick={() => {
+                setSelectedCategory("english");
+                window.history.pushState({}, '', '/books/english');
+              }}
+            >
+              📘 English Books ({categoryCounts.english})
+            </button>
+            <button 
+              className={`category-tab ${selectedCategory === "arabic" ? "active" : ""}`}
+              onClick={() => {
+                setSelectedCategory("arabic");
+                window.history.pushState({}, '', '/books/arabic');
+              }}
+            >
+              📖 Arabic Books ({categoryCounts.arabic})
+            </button>
+            <button 
+              className={`category-tab ${selectedCategory === "urdu" ? "active" : ""}`}
+              onClick={() => {
+                setSelectedCategory("urdu");
+                window.history.pushState({}, '', '/books/urdu');
+              }}
+            >
+              📙 Urdu Books ({categoryCounts.urdu})
+            </button>
+          </div>
+        )}
         
         {/* Filters Bar */}
         <div className="filters-bar">
@@ -311,7 +353,7 @@ const Books = () => {
         
         {/* Results Count */}
         <div className="results-count">
-          Showing {filteredBooks.length} of {categoryCounts[selectedCategory]} books
+          Showing {filteredBooks.length} of {searchQuery ? filteredBooks.length : categoryCounts[selectedCategory]} books
         </div>
         
         {/* Books Grid */}
@@ -319,9 +361,29 @@ const Books = () => {
           {filteredBooks.slice(0, showAllBooks ? filteredBooks.length : 24).map(book => (
             <div key={book.id} className="book-item-card">
               <div className="book-item-content">
-                <h3 className="book-item-title">{book.title}</h3>
+                <h3 className="book-item-title">
+                  {searchQuery ? (
+                    // Highlight search term in title
+                    book.title.split(new RegExp(`(${searchQuery})`, 'gi')).map((part, i) => 
+                      part.toLowerCase() === searchQuery.toLowerCase() ? 
+                        <mark key={i} className="search-highlight">{part}</mark> : part
+                    )
+                  ) : (
+                    book.title
+                  )}
+                </h3>
                 {book.author && (
-                  <p className="book-item-author">{book.author}</p>
+                  <p className="book-item-author">
+                    {searchQuery ? (
+                      // Highlight search term in author
+                      book.author.split(new RegExp(`(${searchQuery})`, 'gi')).map((part, i) => 
+                        part.toLowerCase() === searchQuery.toLowerCase() ? 
+                          <mark key={i} className="search-highlight">{part}</mark> : part
+                      )
+                    ) : (
+                      book.author
+                    )}
+                  </p>
                 )}
                 <div className="book-item-price">
                   <span className="current-price">₹{book.price}</span>
@@ -355,16 +417,19 @@ const Books = () => {
         {/* No Results */}
         {filteredBooks.length === 0 && (
           <div className="no-results">
-            <p>No books found in this price range.</p>
-            <button onClick={() => setPriceRange({ min: 50, max: 5000 })}>
-              Reset Filters
+            <p>No books found matching "{searchQuery}" in this price range.</p>
+            <button onClick={() => {
+              if (searchQuery) clearSearch();
+              else setPriceRange({ min: 50, max: 5000 });
+            }}>
+              {searchQuery ? "Clear Search" : "Reset Filters"}
             </button>
           </div>
         )}
       </div>
       
-      {/* Featured Books Section */}
-      <FeaturedBooks />
+      {/* Featured Books Section - Hide when searching */}
+      {!searchQuery && <FeaturedBooks />}
     </div>
   );
 };

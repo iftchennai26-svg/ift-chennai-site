@@ -293,6 +293,41 @@
   font-weight: 600;
 }
 
+/* Add these styles for search functionality */
+.clear-search-btn {
+  background: #E8A317;
+  color: #1B4D2E;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.3s;
+}
+
+.clear-search-btn:hover {
+  background: #D4A017;
+  transform: translateY(-2px);
+}
+
+.search-highlight {
+  background: #E8A317;
+  color: #1B4D2E;
+  padding: 0px 4px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.book-item-title mark,
+.book-item-author mark {
+  background: #E8A317;
+  color: #1B4D2E;
+  padding: 0px 4px;
+  border-radius: 4px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .books-collection-section {
