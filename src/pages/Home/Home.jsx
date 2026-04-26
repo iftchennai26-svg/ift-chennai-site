@@ -3,7 +3,7 @@ import HeroSection from '../../Components/HeroSection/HeroSection';
 import CategoriesSection from '../../Components/CategoriesSection/CategoriesSection';
 import FeaturedBooks from '../../Components/FeaturedBooks/FeaturedBooks';
 import LatestBooks from '../../Components/LatestBooks/LatestBooks';
-import Onsale from '../../Components/Onsale/Onsale';
+import OnSale from '../../Components/OnSale/Onsale';
 import NewArrivals from '../../Components/NewArrivals/NewArrivals';
 import BestsellingBooks from '../../Components/BestsellingBooks/BestsellingBooks';
 import WhyChooseUs from '../../Components/WhyChooseUs/WhyChooseUs';
@@ -16,7 +16,7 @@ const Home = () => {
       <CategoriesSection />
       <FeaturedBooks />
       <LatestBooks />
-      <Onsale />
+      <OnSale />
       <NewArrivals />
       <BestsellingBooks />
       <WhyChooseUs />
