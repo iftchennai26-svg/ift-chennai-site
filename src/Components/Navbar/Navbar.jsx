@@ -122,7 +122,7 @@ const Navbar = () => {
           
           <div className="contact-info">
             <div className="whatsapp-contact">
-              <span className="whatsapp-icon">💬</span>
+              {/* <span className="whatsapp-icon">💬</span> */}
               <span className="whatsapp-number">+91 8668057596</span>
               <span className="whatsapp-text">WhatsApp</span>
             </div>
@@ -183,7 +183,7 @@ const Navbar = () => {
                   onFocus={() => searchQuery.trim() !== '' && setShowSuggestions(true)}
                   autoComplete="off"
                 />
-                <button type="submit" className="search-btn">🔍</button>
+                <button type="submit" className="search-btn"></button>
               </form>
               
               {/* Suggestions Dropdown */}
@@ -195,9 +195,9 @@ const Navbar = () => {
                       className="suggestion-item"
                       onClick={() => handleSuggestionClick(item)}
                     >
-                      <div className="suggestion-icon">
-                        {item.category === 'book' ? '📚' : '👨‍🎓'}
-                      </div>
+                      {/* <div className="suggestion-icon">
+                        {item.category === 'book' ? '' : ''}
+                      </div> */}
                       <div className="suggestion-content">
                         <div className="suggestion-name">
                           {highlightMatch(item.name, searchQuery)}

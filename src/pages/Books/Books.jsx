@@ -258,7 +258,7 @@ const Books = () => {
                 window.history.pushState({}, '', '/books/tamil');
               }}
             >
-              📚 Tamil Books ({categoryCounts.tamil})
+               Tamil Books ({categoryCounts.tamil})
             </button>
             <button 
               className={`category-tab ${selectedCategory === "english" ? "active" : ""}`}
@@ -267,7 +267,7 @@ const Books = () => {
                 window.history.pushState({}, '', '/books/english');
               }}
             >
-              📘 English Books ({categoryCounts.english})
+               English Books ({categoryCounts.english})
             </button>
             <button 
               className={`category-tab ${selectedCategory === "arabic" ? "active" : ""}`}
@@ -276,7 +276,7 @@ const Books = () => {
                 window.history.pushState({}, '', '/books/arabic');
               }}
             >
-              📖 Arabic Books ({categoryCounts.arabic})
+               Arabic Books ({categoryCounts.arabic})
             </button>
             <button 
               className={`category-tab ${selectedCategory === "urdu" ? "active" : ""}`}
@@ -285,7 +285,7 @@ const Books = () => {
                 window.history.pushState({}, '', '/books/urdu');
               }}
             >
-              📙 Urdu Books ({categoryCounts.urdu})
+               Urdu Books ({categoryCounts.urdu})
             </button>
           </div>
         )}
