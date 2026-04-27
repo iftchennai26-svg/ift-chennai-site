@@ -8,14 +8,14 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
-  background: #FDF8F0;
+  background: #ffffff;
 }
 
 .collection-header {
   text-align: center;
   margin-bottom: 2rem;
   padding: 2rem;
-  background: linear-gradient(135deg, #1B4D2E 0%, #2D6A3B 100%);
+  background: linear-gradient(135deg, #258588 0%, #14626e 100%);
   border-radius: 15px;
   color: white;
 }
@@ -23,7 +23,7 @@
 .collection-header h1 {
   font-size: 2rem;
   margin-bottom: 0.5rem;
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .collection-header p {
@@ -78,7 +78,7 @@
 }
 
 .filter-toggle {
-  background: #1B4D2E;
+  background: linear-gradient(135deg, #102021 0%, #000000 100%);
   color: white;
   border: none;
   padding: 0.6rem 1.2rem;
@@ -88,9 +88,9 @@
   transition: all 0.3s;
 }
 
-.filter-toggle:hover {
-  background: #2D6A3B;
-}
+/* .filter-toggle:hover {
+  background: #09626f;
+} */
 
 .sort-section {
   display: flex;

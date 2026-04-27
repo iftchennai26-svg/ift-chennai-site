@@ -1,7 +1,7 @@
 .hero-section {
-  background: linear-gradient(135deg, #1B4D2E 0%, #2D6A3B 100%);
+  background: #fcfcfc;
   padding: 50px 5% 60px;
-  color: white;
+  color: #1B4D2E;
   text-align: center;
 }
 
@@ -18,7 +18,7 @@
   margin: 0 auto 25px;
   line-height: 1.6;
   font-family: 'Arial', sans-serif;
-  color: #E8F0E0;
+  color: #1B4D2E;
 }
 
 .hero-buttons {
@@ -42,7 +42,7 @@
 
 .btn-secondary {
   background: transparent;
-  color: white;
+  color: #1b4d30;
   padding: 10px 30px;
   font-size: 15px;
   font-weight: bold;
@@ -74,13 +74,13 @@
   font-weight: bold;
   margin: 0;
   color: #E8A317;
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .stat p {
   font-size: 13px;
   margin: 5px 0 0;
-  color: #D4E0C8;
+  color: #242723;
   font-family: 'Arial', sans-serif;
 }
 

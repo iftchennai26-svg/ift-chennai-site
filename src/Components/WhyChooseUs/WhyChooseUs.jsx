@@ -3,22 +3,22 @@ import './WhyChooseUs.css';
 
 const features = [
   {
-    icon: "📚",
+    // icon: "📚",
     title: "Authentic Books",
     description: "Verified Islamic literature from trusted sources"
   },
   {
-    icon: "⭐",
+    // icon: "⭐",
     title: "Quality Content",
     description: "Carefully curated books by renowned scholars"
   },
   {
-    icon: "📱",
+    // icon: "📱",
     title: "E-Pub Available",
     description: "Read on any device with our digital formats"
   },
   {
-    icon: "🚚",
+    // icon: "🚚",
     title: "Fast Shipping",
     description: "Quick delivery to your doorstep worldwide"
   }

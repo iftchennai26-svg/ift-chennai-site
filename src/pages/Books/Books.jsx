@@ -296,7 +296,7 @@ const Books = () => {
             className="filter-toggle"
             onClick={() => setShowFilters(!showFilters)}
           >
-            🔍 {showFilters ? "Hide Filters" : "Show Filters"}
+             {showFilters ? "Hide Filters" : "Show Filters"}
           </button>
           
           <div className="sort-section">

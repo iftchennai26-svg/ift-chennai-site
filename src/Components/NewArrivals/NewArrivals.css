@@ -1,12 +1,12 @@
 .new-arrivals-section {
   padding: 60px 5%;
-  background: #FDF8F0;
+  background: #cddfe3;
 }
 
 .new-arrivals-section .section-header h2 {
   font-size: 28px;
   color: #2C3E2D;
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
   margin-bottom: 30px;
   text-align: center;
 }

@@ -5,7 +5,7 @@
 }
 
 .navbar {
-  background: #1B4D2E;
+  background: linear-gradient(135deg, #258588 0%, #14626e 100%);
   padding: 1rem 5%;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   position: sticky;
@@ -57,7 +57,7 @@
 }
 
 .whatsapp-contact {
-  background: #25D366;
+  background: #034019;
   padding: 8px 16px;
   border-radius: 30px;
   display: flex;

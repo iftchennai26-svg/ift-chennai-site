@@ -1,65 +1,242 @@
-@import url('https://fonts.googleapis.com/css2?family=Georgia&family=Arial:wght@400;500;600;700&display=swap');
+/* ========================================
+   MODERN PROFESSIONAL FONTS - IFT CHENNAI
+   ======================================== */
 
-/* Theme Colors */
+/* Import Modern Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Cormorant+Garamond:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+/* Theme Colors - From Screenshot */
 :root {
+  /* Primary Colors */
   --primary-green: #0B3B2A;
   --secondary-green: #1B5E3F;
-  --gold: #FFD700;
+  --gold: #E8A317;
+  --gold-light: #F5C542;
+  --gold-dark: #D4A017;
+  
+  /* Background Colors */
   --cream: #F9F6F0;
   --dark-cream: #FEF9E6;
-  --text-dark: #0B3B2A;
-  --text-light: #666;
+  --white: #FFFFFF;
+  
+  /* Text Colors */
+  --text-dark: #1E3A2F;
+  --text-light: #666666;
+  --text-gray: #999999;
+  
+  /* Border Colors */
   --border-color: #E8DCC8;
+  --border-dark: #E0D5BD;
+  
+  /* Status Colors */
+  --whatsapp-green: #25D366;
+  --star-gold: #FFB800;
 }
 
-/* Global Button Styles */
-button {
-  font-family: 'Arial', sans-serif;
-}
-
-h1, h2, h3, h4 {
-  font-family: 'Georgia', serif;
-}
-
-p, a, li, span, div {
-  font-family: 'Arial', sans-serif;
-}
-
+/* Global Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body Styles with Modern Font */
 body {
-  font-family: 'Segoe UI', 'Amiri', 'Roboto', sans-serif;
-  background-color: #ffffff;
-  color: #1e2a1e;
+  font-family: 'Inter', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  background-color: var(--dark-cream);
+  color: var(--text-dark);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-button {
-  cursor: pointer;
-  font-family: inherit;
+/* Heading Styles - Elegant Serif */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-dark);
 }
 
+/* Heading Sizes */
+h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 36px;
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+/* Paragraph & Text Elements */
+p, span, li, div, a {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: -0.01em;
+}
+
+/* Links */
 a {
   text-decoration: none;
+  transition: all 0.3s ease;
 }
 
-/* Custom scrollbar */
+/* Button Styles */
+button {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Input Styles */
+input, select, textarea {
+  font-family: 'Inter', 'Plus Jakarta Sans', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: -0.2px;
+}
+
+/* Custom Scrollbar - Match Theme */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--cream);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b68b40;
+  background: var(--gold);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #8b5a2b;
+  background: var(--gold-dark);
+}
+
+/* Selection Color */
+::selection {
+  background: var(--gold);
+  color: var(--primary-green);
+}
+
+::-moz-selection {
+  background: var(--gold);
+  color: var(--primary-green);
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  h2 {
+    font-size: 28px;
+  }
+  
+  h3 {
+    font-size: 20px;
+  }
+  
+  h4 {
+    font-size: 18px;
+  }
+}
+
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus Styles for Accessibility */
+:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--gold-light);
+}
+
+/* Disable outline for mouse users */
+:focus:not(:focus-visible) {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Container Utility */
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-gold {
+  color: var(--gold);
+}
+
+.text-dark {
+  color: var(--text-dark);
+}
+
+.text-light {
+  color: var(--text-light);
+}
+
+/* Font Weight Utilities */
+.font-light {
+  font-weight: 300;
+}
+
+.font-regular {
+  font-weight: 400;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+/* Letter Spacing Utilities */
+.tracking-tight {
+  letter-spacing: -0.02em;
+}
+
+.tracking-normal {
+  letter-spacing: -0.01em;
+}
+
+.tracking-wide {
+  letter-spacing: 0.3px;
 }

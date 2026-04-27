@@ -1,13 +1,13 @@
 .why-choose-us {
   padding: 50px 5%;
-  background: #F9F5EB;
+  background: #f0f0f0;
   text-align: center;
 }
 
 .why-choose-us h2 {
   font-size: 30px;
   color: #2C3E2D;
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
   margin-bottom: 40px;
 }
 
@@ -41,7 +41,7 @@
   font-size: 20px;
   color: #2C3E2D;
   margin: 12px 0;
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
 }
 
 .feature-card p {

@@ -2,10 +2,10 @@ import React from 'react';
 import './CategoriesSection.css';
 
 const categories = [
-  { name: "Quran & Tafsir", books: "45 books", icon: "📖" },
-  { name: "Hadith", books: "38 books", icon: "📜" },
-  { name: "Fiqh (Islamic Jurisprudence)", books: "52 books", icon: "⚖️" },
-  { name: "Seerah", books: "28 books", icon: "🌟" }
+  { name: "Quran & Tafsir", books: "45 books", icon: "" },
+  { name: "Hadith", books: "38 books", icon: "" },
+  { name: "Fiqh (Islamic Jurisprudence)", books: "52 books", icon: "" },
+  { name: "Seerah", books: "28 books", icon: "" }
 ];
 
 const CategoriesSection = () => {

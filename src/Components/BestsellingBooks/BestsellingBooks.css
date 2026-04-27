@@ -20,7 +20,7 @@
 }
 
 .bestselling-card {
-  background: linear-gradient(135deg, #F9F5EB 0%, #FDF8F0 100%);
+  background: linear-gradient(135deg, #e4fbf8 0%, #ffffff 100%);
   border-radius: 12px;
   padding: 25px;
   transition: all 0.3s;
@@ -56,8 +56,8 @@
 
 .add-to-cart-best {
   width: 100%;
-  background: #E8A317;
-  color: #1B4D2E;
+  background: #2C3E2D;;
+  color: #ffffff;
   border: none;
   padding: 12px;
   border-radius: 8px;

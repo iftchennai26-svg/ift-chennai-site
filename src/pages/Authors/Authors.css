@@ -2,28 +2,28 @@
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
-  background: #FDF8F0;
+  background: #ffffff;
   min-height: 100vh;
 }
 
 .authors-header {
   text-align: center;
   padding: 2rem 1rem 3rem;
-  background: linear-gradient(135deg, #FDF8F0 0%, #F9F5EB 100%);
+  background: linear-gradient(135deg, #258588 0%, #14626e 100%);
   border-radius: 0 0 30px 30px;
   margin-bottom: 2rem;
 }
 
 .authors-header h1 {
   font-size: 2.5rem;
-  color: #2C3E2D;
-  font-family: 'Georgia', serif;
+  color: #ffffff;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
   margin-bottom: 0.5rem;
 }
 
 .authors-header p {
   font-size: 1.1rem;
-  color: #666;
+  color: #dad9d9;
   font-family: 'Arial', sans-serif;
 }
 
@@ -53,7 +53,7 @@
 .author-info h3 {
   font-size: 1.4rem;
   color: #1B4D2E;
-  font-family: 'Georgia', serif;
+  font-family: 'Cormorant Garamond', 'Georgia', serif;
   margin-bottom: 0.5rem;
 }
 
