@@ -33,9 +33,10 @@ function App() {
         <Route path="/account" element={<Account />} />
         <Route path="/e-library" element={<ELibrary />} />
         <Route path="/cart" element={<Cart />} /> */}
+        <Route path="/cart" element={<Cart />} />
         <Route path="/categories" element={<Home />} />
         <Route path="/authors" element={<Authors />} />
-      </Routes>
+      </Routes>C
       <Footer />
     </Router>
   );
