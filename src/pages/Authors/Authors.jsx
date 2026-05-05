@@ -86,7 +86,7 @@ const Authors = () => {
           <div key={author.id} className="author-card">
             <div className="author-info">
               <h3>{author.name}</h3>
-              <div className="author-books-count">📚 {author.books} books</div>
+              <div className="author-books-count"> {author.books} books</div>
               {/* <p className="author-description">{author.description}</p> */}
               <button 
                 className="view-books-btn"
